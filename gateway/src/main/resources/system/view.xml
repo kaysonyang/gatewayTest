@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<vos name="vomodel" model="user">
+    <vo name="userView" label="用户列表" model="com.wsjia.gw.model.UserView" url="http://user">
+        <field name="id" label="" type="hide" source="id"/>
+        <field name="name" label="姓名" type="text" source="name"/>
+        <field name="age" label="年龄" type="number" source="age">
+            <item label="&gt;" value="&gt;"/>
+            <item label="&gt;=" value="&gt;="/>
+            <item label="&lt;" value="&lt;"/>
+            <item label="&lt;=" value="&lt;="/>
+            <item label="=" value="="/>
+        </field>
+        <field name="role" label="职位" type="text" source="role"/>
+        <field name="deptName" label="部门名称" type="text" source="dept.name"/>
+        <field name="other" label="备注" type="view" source="info.other" url="http://other/findInfo" key="userid=id"/>
+    </vo>
+</vos>
