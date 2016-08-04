@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<vos name="vomodel" model="CustomerCase">
+    <vo name="CustomerCaseView" label="客户案例列表" model="com.wsjia.ga.model.ProductView" url="http://product">
+        <field name="id" label="" type="hide" source="id"/>
+        <field name="name" label="名称" type="text" source="name"/>
+        <field name="courtRid" label="" type="hide" source="courtRid"/>
+        <field name="courtName" label="小区名称" type="text" source="Court.name" url="" key="id=courtRid"/>
+        <field name="courtAddress" label="小区地址" type="text" source="Court.address" url="" key="id=courtRid"/>
+        <field name="styleType" label="类型" type="selection" source="type">
+            <item label="中式" value="1"/>
+            <item label="美式" value="2"/>
+            <item label="现代" value="3"/>
+        </field>
+        <field name="CaseProductRid" label="" type="hide" source="caseProduct.productRid"/>
+        <field name="productName" label="产品名称" type="view" source="Product.name" url="" key="id=CaseProductRid"/>
+        <field name="productSerial" label="产品编号" type="view" source="Product.serial" url="" key="id=CaseProductRid"/>
+        <field name="productType" label="产品类别" type="view" source="Product.type" url="" key="id=CaseProductRid"/>
+        <field name="productMainPictureUrl" label="产品图片" type="view" source="Product.mainPictureUrl" url="" key="id=CaseProductRid"/>
+        <field name="productBrandName" label="品牌名称" type="view" source="Product.brand.name" url="" key="id=CaseProductRid"/>
+        <field name="productBrandSerial" label="品牌编号" type="view" source="Product.brand.serial" url="" key="id=CaseProductRid"/>
+        <field name="productBrandMainPictureUrl" label="品牌图片" type="view" source="Product.brand.mainPictureUrl" url="" key="id=CaseProductRid"/>
+    </vo>
+</vos>
+        <!-- <vos name="vomodel" model="Product">
+             <vo name="Test" label="测试" model="com.wsjia.ga.model.Test" url="http://192.168.1.114:8091/product/">
+                 <field name="id" label="id" type="hide" source="id"/>
+                 <field name="name" label="名称" type="text" source="name"/>
+                 <field name="brandName" label="品牌名称" type="text" source="brand.id"/>
+                 <field name="testBrandName" label="其他品牌名称" type="" source="Product.brand.name" url="http://192.168.1.114:8091/product/findUnique" key="id=id"/>
+                 <field name="testName" label="其他名称" type="" source="Product.name" url="http://192.168.1.114:8091/product/findUnique" key="id=id"/>
+             </vo>
+         </vos>-->
